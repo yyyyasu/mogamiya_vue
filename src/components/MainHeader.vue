@@ -9,9 +9,9 @@
         />
       </div>
       <div class="menu">
-        <li class="menu__btn yamagatagyu">
+        <button @click="toYamagatagyu" class="menu__btn yamagatagyu">
           山形牛
-        </li>
+        </button>
         <li class="menu__btn kinkabuta">
           純粋金華豚
         </li>
@@ -27,7 +27,10 @@
           >
         </li>
       </div>
-
+      <div>
+        <button @click="toYamagatagyu" style="background-color: red;">山形牛ページにいく</button>
+      </div>
+      <h1></h1>
       <!-- <div class="header__btn">
         <button @click="show = !show">メニュー</button>
       </div>
@@ -45,6 +48,13 @@ export default {
     return {
       show: false
     };
+  },
+  methods: {
+    toYamagatagyu() {
+      this.$router.push({
+        path: 'yamagatagyu'
+      })
+    }
   }
 };
 </script>

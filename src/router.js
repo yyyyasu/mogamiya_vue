@@ -7,6 +7,8 @@ import Yamagatagyu from './views/Yamagatagyu.vue'
 import Kinkabuta from './views/Kinkabuta.vue'
 import Yonezawabuta from './views/Yonezawabuta.vue'
 import ShopInfo from './views/ShopInfo.vue'
+import OnlineShop from './views/OnlineShop.vue'
+import MainFooter from './components/MainFooter.vue'
 
 
 // 必要な時だけHomeコンポーネントを取得するようwebpackに指示
@@ -48,5 +50,21 @@ export default new Router({
       name: 'ShopInfo',
       component: ShopInfo
     },
+    {
+      path: '/onlineshop/:id',
+      name: 'OnlineShop',
+      component: OnlineShop,
+      props: true
+    },
+    {
+      path: '/mainfooter/:id',
+      name: 'MainFooter',
+      component: MainFooter,
+      props: true,
+    },
+    {
+      path: '*',
+      redirect: '/'
+    }
   ]
 })

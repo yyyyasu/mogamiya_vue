@@ -2,12 +2,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import MainHeader from './components/MainHeader.vue'
+import MenuItem from './components/MenuItem.vue'
 import Top from './views/Top.vue'
 import Yamagatagyu from './views/Yamagatagyu.vue'
 import Kinkabuta from './views/Kinkabuta.vue'
 import Yonezawabuta from './views/Yonezawabuta.vue'
 import ShopInfo from './views/ShopInfo.vue'
-import OnlineShop from './views/OnlineShop.vue'
 import MainFooter from './components/MainFooter.vue'
 
 
@@ -24,6 +24,11 @@ export default new Router({
       path: '/', // path: '宛先パス'
       name: 'MainHeader', // name: 'コンポーネント名' 名前付きルート
       component: MainHeader  // component: 表示するコンポーネント名
+    },
+    {
+      path: '/MenuItem',
+      name: 'MenuItem',
+      component: MenuItem
     },
     {
       path: '/top',
@@ -49,12 +54,6 @@ export default new Router({
       path: '/shopinfo',
       name: 'ShopInfo',
       component: ShopInfo
-    },
-    {
-      path: '/onlineshop/:id',
-      name: 'OnlineShop',
-      component: OnlineShop,
-      props: true
     },
     {
       path: '/mainfooter/:id',

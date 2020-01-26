@@ -1,15 +1,30 @@
 <template>
-  <v-app class="main">
-    <header class="content">
-      <div class="">
-        <img
-          alt="Vue logo"
-          src="../assets/店舗ロゴ背景透明化.png"
-          class="header__logo"
-        />
+  <div class="content">
+    <nav>
+      <div class="menu">
+        <router-link tag="li" to="/top" class="menu__btn"
+          >TOP
+        </router-link>
+        <router-link tag="li" to="/yamagatagyu" class="menu__btn"
+          >総称山形牛
+        </router-link>
+        <router-link tag="li" to="/kinkabuta" class="menu__btn kinkabuta"
+          >純粋金華豚
+        </router-link>
+        <router-link tag="li" to="/yonezawabuta" class="menu__btn yonezawabuta"
+          >米澤豚
+        </router-link>
+        <router-link tag="li" to="/shopinfo" class="menu__btn shopinfo"
+          >店舗情報
+        </router-link>
+        <li class="menu__btn onlineshop">
+          <a href="http://www.110298.com/" target="_blank" style="color: white;"
+            >OnlineShop</a
+          >
+        </li>
       </div>
-    </header>
-  </v-app>
+    </nav>
+  </div>
 </template>
 
 <script>
@@ -18,16 +33,9 @@ export default {
   data() {
     return {
       show: false
-    };
-  },
-  methods: {
-    toYamagatagyu() {
-      this.$router.push({
-        path: "yamagatagyu"
-      });
     }
-  }
-};
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -44,6 +52,30 @@ export default {
   margin: 8rem auto;
   animation-name: slidein;
   animation-duration: 3s;
+}
+
+li {
+  display: inline-block;
+  width: 7rem;
+}
+
+.menu__btn {
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  margin-bottom: 20px;
+  border: none;
+  color: #fff;
+  background: #921414;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+}
+
+.menu {
+  width: 100%;
+  animation-name: fadein;
+  animation-duration: 4s;
 }
 
 @keyframes slidein {

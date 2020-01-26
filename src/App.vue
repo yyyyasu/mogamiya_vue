@@ -1,44 +1,23 @@
 <template>
-  <div id="app">
-    <div class="mainheader"><MainHeader /></div>
-    <div class="top"><Top /></div>
-    <div class="yamagatagyu"><Yamagatagyu /></div>
-    <div class="kinkabuta"><Kinkabuta /></div>
-    <div class="yonezawabuta"><Yonezawabuta /></div>
-    <div class="shopinfo"><ShopInfo /></div>
-    <div class="mainfooter"><MainFooter /></div>
-  </div>
+ <div id="app">
+   <MenuItem></MenuItem>
+   <router-view></router-view>
+ </div>
 </template>
 
 <script>
-// import MainHeader from './components/MainHeader.vue'
-import MainHeader from "./components/MainHeader.vue";
-import Top from "./views/Top.vue";
-import Yamagatagyu from "./views/Yamagatagyu.vue";
-import Kinkabuta from "./views/Kinkabuta.vue";
-import Yonezawabuta from "./views/Yonezawabuta.vue";
-import ShopInfo from "./views/ShopInfo.vue";
-// import OnlineShop from './views/OnlineShop.vue'
-import MainFooter from "./components/MainFooter.vue";
-
+import MenuItem from './components/MenuItem.vue'
 export default {
   name: "app",
   components: {
-    MainHeader,
-    Top,
-    Yamagatagyu,
-    Kinkabuta,
-    Yonezawabuta,
-    ShopInfo,
-    // OnlineShop,
-    MainFooter
+    MenuItem
   },
   methods: {
     toScroll() {
-      document.getElementById('').scrollIntoView(true)
+      document.getElementById("").scrollIntoView(true);
     }
   }
-}
+};
 </script>
 
 <style lang="scss">

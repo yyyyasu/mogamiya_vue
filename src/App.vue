@@ -1,20 +1,42 @@
 <template>
- <div id="app">
-   <MenuItem></MenuItem>
-   <router-view></router-view>
- </div>
+  <div id="app">
+    <router-view></router-view>
+    <transition name="fade">
+      <button id="pagetop" @click="toTop()">
+        トップへ戻る
+      </button>
+    </transition>
+  </div>
 </template>
 
 <script>
-import MenuItem from './components/MenuItem.vue'
 export default {
   name: "app",
-  components: {
-    MenuItem
+  data() {
+    return {
+      scrollTimer: 0,
+      scrollY: 0
+    };
+  },
+
+  mounted() {
+    //ハンドラーを登録
+    window.addEventListener("scroll", this.handleScroll());
   },
   methods: {
-    toScroll() {
-      document.getElementById("").scrollIntoView(true);
+    handleScroll() {
+      if (this.scrollTimer) return;
+      this.scrollTimer = setTimeout(() => {
+        this.scrollY = window.scrollY;
+        clearTimeout(this.scrollTimer);
+        this.scrollTimer = 0;
+      }, 100);
+    },
+    toTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     }
   }
 };
@@ -30,6 +52,12 @@ export default {
   margin: 0 auto;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -39,12 +67,15 @@ export default {
   font-family: Tahoma, Geneva, sans-serif;
   font-size: 62.5%; /*font-size 1rem=10px */
   background-color: black;
-  text-align: center;
+  margin: 0 auto;
+  text-align: justify;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+#pagetop {
+  font-size: 1rem;
+  color: green;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
 }
 </style>

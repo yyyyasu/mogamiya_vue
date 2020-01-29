@@ -1,15 +1,12 @@
 // import コンポーネント名 from 'ページ遷移で呼ばれるVueファイルのパス'
 import Vue from 'vue'
 import Router from 'vue-router'
-import MainHeader from './components/MainHeader.vue'
-import MenuItem from './components/MenuItem.vue'
-import Top from './views/Top.vue'
+import Home from './views/Home.vue'
+import About from './views/About.vue'
 import Yamagatagyu from './views/Yamagatagyu.vue'
 import Kinkabuta from './views/Kinkabuta.vue'
 import Yonezawabuta from './views/Yonezawabuta.vue'
 import ShopInfo from './views/ShopInfo.vue'
-import MainFooter from './components/MainFooter.vue'
-
 
 // 必要な時だけHomeコンポーネントを取得するようwebpackに指示
 // const Top = () => import('./views/Top.vue')
@@ -22,48 +19,36 @@ export default new Router({
   routes: [ // URLのパスと紐ずくコンポーネントのマッピング
     {
       path: '/', // path: '宛先パス'
-      name: 'MainHeader', // name: 'コンポーネント名' 名前付きルート
-      component: MainHeader  // component: 表示するコンポーネント名
+      name: 'Home', // name: 'コンポーネント名' 名前付きルート
+      component: Home,  // component: 表示するコンポーネント名
+      children: [
+        {
+          path: 'about',
+          name: 'About',
+          component: About
+        }, {
+          path: 'yamagatagyu',
+          name: 'Yamagatagyu',
+          component: Yamagatagyu
+        }, {
+          path: 'kinkabuta',
+          name: 'Kinkabuta',
+          component: Kinkabuta
+        }, {
+          path: 'yonezawabuta',
+          name: 'Yonezawabuta',
+          component: Yonezawabuta
+        }, {
+          path: 'shopinfo',
+          name: 'ShopInfo',
+          component: ShopInfo
+        }, 
+        // {
+        //   path: '*',
+        //   redirect: '/'
+        // }
+      ]
     },
-    {
-      path: '/MenuItem',
-      name: 'MenuItem',
-      component: MenuItem
-    },
-    {
-      path: '/top',
-      name: 'Top',
-      component: Top
-    },
-    {
-      path: '/yamagatagyu',
-      name: 'Yamagatagyu',
-      component: Yamagatagyu
-    },
-    {
-      path: '/kinkabuta',
-      name: 'Kinkabuta',
-      component: Kinkabuta
-    },
-    {
-      path: '/yonezawabuta',
-      name: 'Yonezawabuta',
-      component: Yonezawabuta
-    },
-    {
-      path: '/shopinfo',
-      name: 'ShopInfo',
-      component: ShopInfo
-    },
-    {
-      path: '/mainfooter/:id',
-      name: 'MainFooter',
-      component: MainFooter,
-      props: true,
-    },
-    {
-      path: '*',
-      redirect: '/'
-    }
+    
   ]
 })

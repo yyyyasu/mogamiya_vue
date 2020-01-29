@@ -49,14 +49,12 @@
     </v-container>
   </v-app>
 </template>
-
 <style lang="scss" scoped>
 .content {
   color: white;
   font-family: "游明朝", "HGP明朝E", serif;
   width: 100%;
-  margin-bottom: 12rem;
-  // background-color: blue;
+  margin-bottom: 0 auto;
 }
 
 .head__ttl {

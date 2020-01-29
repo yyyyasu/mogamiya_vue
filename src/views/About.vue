@@ -3,9 +3,9 @@
     <v-app>
       <v-container class="content">
         <v-row no-gutters>
-          <v-col cols="" xs="" class="about">
-            <h3 class="about__ttl-1">本当においしいお肉をお届けしたい。</h3>
-            <p class="about__txt-1">
+          <v-col cols="" xs="" class="about1">
+            <h3 class="about1__ttl-1">本当においしいお肉をお届けしたい。</h3>
+            <p class="about1__txt-1">
               「本当においしいお肉だけをお届けしたい。」
               <br />
               そんな想いで私たちは「最上屋」をつくりました。
@@ -17,9 +17,9 @@
           </v-col>
         </v-row>
         <v-row>
-          <v-col cols="" xs="" class="about">
-            <h3 class="about__ttl-2"><em>“雌牛”</em>へのこだわり</h3>
-            <p class="about__txt-2">
+          <v-col cols="" xs="" class="about2">
+            <h3 class="about2__ttl-2"><em>“雌牛”</em>へのこだわり</h3>
+            <p class="about2__txt-2">
               雌牛の肉質はキメ細やかで、口どけなめらかな脂は、融点が低く甘みがあり、さっぱりとしています。
               <br />
               「サシの入ったお肉はあまり食べられない」
@@ -37,7 +37,7 @@
 
 <script>
 export default {
-  name: "Top"
+  name: "About"
 };
 </script>
 
@@ -46,37 +46,38 @@ export default {
   color: white;
   font-family: "游明朝", "HGP明朝E", serif;
   width: 100%;
-  margin: 8rem auto 12rem;
-  // background-color: red;
+  margin: 0 auto;
 }
 
-.about__ttl-1 {
-  text-align: left;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.about__txt-1 {
-  text-align: left;
-  font-size: 1.2rem;
-  line-height: auto;
-  margin-left: 3rem;
+.about1 {
   margin-bottom: 8rem;
 }
-
-.about__ttl-2 {
+.about1__ttl-1 {
   text-align: left;
   font-size: 1.5rem;
   line-height: 2rem;
   margin-bottom: 1.5rem;
 }
 
-.about__txt-2 {
+.about1__txt-1 {
   text-align: left;
   font-size: 1.2rem;
   line-height: auto;
   margin-left: 3rem;
-  // margin-bottom: 8rem;
+  
+}
+
+.about2__ttl-2 {
+  text-align: left;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about2__txt-2 {
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: auto;
+  margin-left: 3rem;
 }
 </style>

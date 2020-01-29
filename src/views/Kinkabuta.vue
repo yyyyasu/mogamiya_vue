@@ -75,7 +75,7 @@
   color: white;
   font-family: "游明朝", "HGP明朝E", serif;
   width: 100%;
-  margin-bottom: 12rem;
+  margin: 0 auto;
 }
 
 .head__ttl {
@@ -102,11 +102,16 @@
 }
 
 .section2 {
-  margin-bottom: 8rem;
+  text-align: center;
+  margin: 0 auto 8rem;
 }
 
 .section2__img {
   display: inline-block;
+}
+
+.section3__img {
+  float: right;
 }
 
 .section3__about__ttl {

@@ -1,132 +1,213 @@
 <template>
-  <v-app class="main">
-    <header class="content">
-      <div class="header-logo">
-        <img alt="Vue logo" src="../assets/店舗ロゴ背景透明化.png" />
+  <div id="app">
+    <nav class="header">
+      <div id="navbar__toggle" @click="openToggle()">
+        <span class="navbar__toggle__icon"></span>
+        <span class="navbar__toggle__icon"></span>
+        <span class="navbar__toggle__icon"></span>menu
       </div>
-      <div class="menu">
-        <router-link tag="li" to="/about" class="menu__btn"
-          >こだわり
-        </router-link>
-        <router-link tag="li" to="/yamagatagyu" class="menu__btn"
-          >総称山形牛
-        </router-link>
-        <router-link tag="li" to="/kinkabuta" class="menu__btn kinkabuta"
-          >純粋金華豚
-        </router-link>
-        <router-link tag="li" to="/yonezawabuta" class="menu__btn yonezawabuta"
-          >米澤豚
-        </router-link>
-        <router-link tag="li" to="/shopinfo" class="menu__btn shopinfo"
-          >店舗情報
-        </router-link>
-        <li class="menu__btn onlineshop">
-          <a href="http://www.110298.com/" target="_blank" style="color: white;"
-            >OnlineShop</a
-          >
-        </li>
+      <div id="menu__list" @click="closeToggle()">
+        <ul>
+          <li><router-link to="/">ホーム</router-link></li>
+          <li><router-link to="/yamagatagyu">総称山形牛</router-link></li>
+          <li><router-link to="/kinkabuta">純粋金華豚</router-link></li>
+          <li><router-link to="/yonezawabuta">米澤豚</router-link></li>
+          <li><router-link to="/shopinfo">店舗情報</router-link></li>
+          <li><a href="http://www.110298.com/">通販ページ</a></li>
+        </ul>
       </div>
-    </header>
-  </v-app>
+    </nav>
+  </div>
 </template>
 
 <script>
+/* Suggested order:
+ * display
+ * list-style
+ * position
+ * float
+ * clear
+ * width
+ * height
+ * margin
+ * padding
+ * border
+ * background
+ * color
+ * font
+ * text-decoration
+ * text-align
+ * vertical-align
+ * white-space
+ * other text
+ * content */
+
 export default {
   name: "MainHeader",
-  data() {
-    return {
-      show: false
-    };
+  methods: {
+    openToggle() {
+      document.getElementById("navbar__toggle").classList.toggle("open");
+      document.getElementById("menu__list").classList.toggle("open");
+    },
+    closeToggle() {
+      document.getElementById("navbar__toggle").classList.remove("open");
+      document.getElementById("menu__list").classList.remove("open");
+    }
+  },
+  mounted() {
+    window.addEventListener("resize", function() {
+      let w = window.innerWidth;
+      if (w > 620) {
+        document.getElementById("navbar__toggle").classList.remove("open");
+        document.getElementById("menu__list").classList.remove("open");
+      }
+    }, false);
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.content {
-  color: white;
-  font-family: "游明朝", "HGP明朝E", serif;
-  background-color: white;
+#app {
+  position: relative;
+  height: 48px;
+}
+
+.header {
+  position: fixed;
   width: 100%;
-  height: 100%;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.7);
+  a {
+    color: black;
+    text-decoration: none;
+  }
 }
 
-.header-logo {
-  width: 50%;
-  margin: 8rem auto;
-  animation-name: slidein;
-  animation-duration: 3s;
-}
-
-li {
-  display: inline-block;
-  width: 7rem;
-}
-
-.menu__btn {
-  font-size: 1rem;
-  margin: 0 0.2rem;
-  margin-bottom: 20px;
-  border: none;
-  color: #fff;
-  background: #921414;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  outline: none;
-  border-radius: 5px;
-}
-
-.menu {
-  width: 100%;
-  animation-name: fadein;
-  animation-duration: 4s;
+#navbar__toggle {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
   text-align: center;
+  cursor: pointer;
 }
 
-@keyframes slidein {
-  from {
-    opacity: 0;
-    transform: translateX(2.5rem);
+.navbar__toggle__icon {
+  display: block;
+  position: relative;
+  height: 2px;
+  background: #5c6b80;
+  -webkit-transition: ease 0.5s;
+  transition: ease 0.5s;
+}
+
+.navbar__toggle__icon:nth-child(1) {
+  top: 0;
+}
+
+.navbar__toggle__icon:nth-child(2) {
+  margin: {
+    top: 8px;
+    bottom: 8px;
   }
-  to {
-    opacity: 1;
+}
+
+.navbar__toggle__icon:nth-child(3) {
+  top: 0;
+}
+
+/*OPEN時のトグルアイコンの動き*/
+#navbar__toggle.open {
+  .navbar__toggle__icon:nth-child(1) {
+    top: 10px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .navbar__toggle__icon:nth-child(2) {
+    -webkit-transform: translateY(-45deg);
+    transform: translateY(-45deg);
+    opacity: 0;
+  }
+  .navbar__toggle__icon:nth-child(3) {
+    top: -10px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+
+#menu__list {
+  display: inline-block;
+  position: absolute;
+  top: -300px;
+  right: 0;
+  font-size: 1.2em;
+  background-color: #f6f6f6;
+  -webkit-transform transform 
+  li {
+    padding: 1em;
+  }
+}
+
+/*OPEN時の動き*/
+#menu__list.open {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  -webkit-transform: translate(0);
+  transform: translateY(0);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: rgba(255, 255, 255, 0.9);
+  ul {
+    padding: 0;
+  }
+  li {
+    list-style: none;
+    font-size: 14px;
+    padding: 1em;
+  }
+}
+
+@media screen and (min-width: 620px) {
+  .header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    flex-direction: row;
+  }
+
+  #navbar__toggle {
+    display: none;
+  }
+
+  #menu__list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transform: translateX(0);
     transform: translateX(0);
+    font-size: 14px;
+    width: 100%;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.7);
+    justify-content: flex-end;
+    ul {
+      display: flex;
+      height: 48px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    li {
+      list-style: none;
+      padding: {
+        right: 0.5rem;
+        left: 0.5rem;
+      }
+      border-bottom: none;
+    }
   }
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-    transform: translate(0);
-  }
-  to {
-    opacity: 1;
-    transform: translate(1);
-  }
-}
-
-// トランジション
-.fade-enter {
-  // 現れる時の最初の状態
-  opacity: 0;
-}
-.fade-enter-active {
-  // 現れる時のトランジションの状態
-  transition: opacity 1s;
-}
-.fade-enter-to {
-  // 現れる時の最後の状態
-  opacity: 1;
-}
-.fade-leave {
-  // 消える時の最初の状態
-  opacity: 1;
-}
-.fade-leave-active {
-  // 消える時のトランジションの状態
-  transition: opacity 0.5s;
-}
-.fade-leave-to {
-  // 消える時の最後の状態
-  opacity: 0;
 }
 </style>

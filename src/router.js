@@ -2,7 +2,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import About from './views/About.vue'
 import Yamagatagyu from './views/Yamagatagyu.vue'
 import Kinkabuta from './views/Kinkabuta.vue'
 import Yonezawabuta from './views/Yonezawabuta.vue'
@@ -20,34 +19,42 @@ export default new Router({
     {
       path: '/', // path: '宛先パス'
       name: 'Home', // name: 'コンポーネント名' 名前付きルート
-      component: Home,  // component: 表示するコンポーネント名
-      children: [
-        {
-          path: 'about',
-          name: 'About',
-          component: About
-        }, {
-          path: 'yamagatagyu',
-          name: 'Yamagatagyu',
-          component: Yamagatagyu
-        }, {
-          path: 'kinkabuta',
-          name: 'Kinkabuta',
-          component: Kinkabuta
-        }, {
-          path: 'yonezawabuta',
-          name: 'Yonezawabuta',
-          component: Yonezawabuta
-        }, {
-          path: 'shopinfo',
-          name: 'ShopInfo',
-          component: ShopInfo
-        }, 
-        // {
-        //   path: '*',
-        //   redirect: '/'
-        // }
-      ]
+      component: Home, // component: 表示するコンポーネント名
+    },
+    {
+      path: '/yamagatagyu',
+      name: 'Yamagatagyu',
+      component: Yamagatagyu,
+    }, {
+      path: '/kinkabuta',
+      name: 'Kinkabuta',
+      component: Kinkabuta
+    }, {
+      path: '/yonezawabuta',
+      name: 'Yonezawabuta',
+      component: Yonezawabuta
+    }, {
+      path: '/shopinfo',
+      name: 'ShopInfo',
+      component: ShopInfo
+    },
+    // {
+    //   path: '*',
+    //   redirect: '/'
+    // }
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
     }
-  ]
+    if (to.hash) {
+      return {
+        selector: to.hash
+      };
+    }
+    return {
+      x: 0,
+      y: 0
+    }
+  }
 })

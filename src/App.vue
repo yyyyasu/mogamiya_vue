@@ -1,24 +1,25 @@
 <template>
-  <v-app>
-    <div id="app">
-      <MainHeader></MainHeader>
-      <router-view></router-view>
-      <transition name="fade">
-        <div id="pagetop" v-show="scY > 10" @click="toTop">
-          <button>トップへ戻る</button>
-        </div>
-      </transition>
-    </div>
-  </v-app>
+  <div id="app">
+    <MainHeader />
+    <router-view></router-view>
+    <MainFooter />
+    <transition name="fade">
+      <div id="pagetop" v-show="scY > 10" @click="toTop">
+        <a>トップへ</a>
+      </div>
+    </transition>
+  </div>
 </template>
 
 <script>
-import MainHeader from "./components/MainHeader.vue";
+import MainHeader from "./components/MainHeader.vue"
+import MainFooter from "./components/MainFooter.vue"
 
 export default {
   name: "app",
   components: {
-    MainHeader
+    MainHeader,
+    MainFooter
   },
   data() {
     return {
@@ -29,7 +30,10 @@ export default {
 
   created() {
     //scイベント登録
-    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     //ページトップへスクロール
@@ -54,93 +58,46 @@ export default {
 
 <style lang="scss">
 * {
-  margin: 0;
-  padding: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
 }
 
 img {
   display: block;
   max-width: 100%;
-  height: auto;
+  max-height: auto;
+  margin: 0 auto;
 }
 
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  margin: 0 auto;
+  font-family: "游明朝", "HGP明朝E", serif; /*"Avenir", Helvetica, Arial, sans-serif;*/
+  -webkit-font-smoothing: antialiased; /* フォントのアンチエイリアス */
   -moz-osx-font-smoothing: grayscale;
   -ms-text-size-adjust: 100%; /* IE on Windows Phone用 */
   -webkit-text-size-adjust: 100%; /* iOS用 */
-  font-family: Tahoma, Geneva, sans-serif;
-  font-size: 62.5%; /*font-size 1rem=10px */
-  background-color: white;
-  margin: 0 auto;
-  text-align: justify;
 }
-
-// #main-header {
-//   background-color: red;
-// }
-
-// .menu {
-//   background-color: blue;
-//   height: 3rem;
-//   width: 100%;
-//   text-align: right;
-//   list-style: none;
-//   margin: 0;
-//   padding: 0;
-
-//   li {
-//     display: inline-block;
-//   }
-// }
-
-// .menu_btn {
-//   background-color: green;
-//   font-size: 1rem;
-//   line-height: 3rem;
-//   text-align: center;
-//   text-decoration: none;
-//   margin: 0 0.5rem;
-//   cursor: pointer;
-// }
-
-// .menu_btn:hover {
-//   color: #e7da66;
-// }
 
 #pagetop {
-  font-size: 0.8rem;
   position: fixed;
-  bottom: 0.8rem;
-  right: 0.8rem;
-  border: 1px solid #15aeec;
-  background-color: #49c0f0;
-  background-image: -webkit-linear-gradient(top, #49c0f0, #2cafe3);
-  background-image: linear-gradient(to bottom, #49c0f0, #2cafe3);
-  border-radius: 4px;
-  color: #fff;
-  line-height: 50px;
-  -webkit-transition: none;
-  transition: none;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-}
-
-#pagetop:hover {
-  border: 1px solid #1090c3;
-  background-color: #1ab0ec;
-  background-image: -webkit-linear-gradient(top, #1ab0ec, #1a92c2);
-  background-image: linear-gradient(to bottom, #1ab0ec, #1a92c2);
-}
-
-#pagetop:active {
-  background: #1a92c2;
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2);
-  color: #1679a1;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+  bottom: 10px;
+  right: 10px;
+  opacity: 0.8;
+  background: #3f98ef;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  cursor: pointer;
+  a {
+    color: white;
+    font-size: 14px;
+    line-height: 64px;
+    text-align: center;
+    vertical-align: middle;
+  }
 }
 </style>

@@ -1,102 +1,87 @@
 <template>
-  <v-container fluid class="content">
-    <h2 class="head__ttl">店舗情報</h2>
-    <v-row no-gutters>
-      <v-col cols="12" sm="6">
-        <table>
-          <tr>
-            <td>店名</td>
-            <td>最上屋</td>
-          </tr>
-          <tr>
-            <td>会社名</td>
-            <td>山形牛 最上屋</td>
-          </tr>
-          <tr>
-            <td>住所</td>
-            <td>〒562-0035 大阪府箕面市船場東3-10-28</td>
-          </tr>
-          <tr>
-            <td>電話番号</td>
-            <td>072-729-1551</td>
-          </tr>
-          <tr>
-            <td>FAX番号</td>
-            <td>072-729-1561</td>
-          </tr>
-          <tr>
-            <td>Eメールアドレス</td>
-            <td>mogamiya@110298.com</td>
-          </tr>
-          <tr>
-            <td>営業時間</td>
-            <td>午前10時00分～午後7時00分</td>
-          </tr>
-          <tr>
-            <td>定休日</td>
-            <td>木曜日 ※祝日の場合は営業</td>
-          </tr>
-          <tr class="shop-map">
-            <td>地図</td>
-            <td>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3275.406237958676!2d135.48937101522932!3d34.82087728040375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000fb00b80e1989%3A0x111b754e9b783d0a!2z44CSNTYyLTAwMzUg5aSn6Ziq5bqc566V6Z2i5biC6Ii55aC05p2x77yT5LiB55uu77yR77yQ4oiS77yS77yY!5e0!3m2!1sja!2sjp!4v1579314844292!5m2!1sja!2sjp"
-                width="100%"
-                height="100%"
-                frameborder="0"
-                style="border:0;"
-                allowfullscreen=""
-                class="google-map"
-              >
-              </iframe>
-            </td>
-          </tr>
-        </table>
-      </v-col>
-      <v-col cols="12" sm="6" md="6" lg="6">
-        <div class="shopPhotos">
-          <img src="../assets/店舗外観.jpg" alt="店舗外観の写真" />
-          <img src="../assets/店内全体.jpg" alt="店内全体の写真" />
-        </div>
-      </v-col>
-    </v-row>
-  </v-container>
+  <div class="wrap">
+    <h2 class="headding">店舗情報</h2>
+    <table class="table">
+      <tr>
+        <th>店名</th>
+        <td>最上屋</td>
+      </tr>
+      <tr>
+        <th>所在地</th>
+        <td>〒562-0035 大阪府箕面市船場東3-10-28</td>
+      </tr>
+      <tr>
+        <th>電話</th>
+        <td>072-729-1551</td>
+      </tr>
+      <tr>
+        <th>FAX</th>
+        <td>072-729-1561</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>mogamiya@110298.com</td>
+      </tr>
+      <tr>
+        <th>営業時間</th>
+        <td>
+          午前10時00分～午後7時00分 <br />
+          定休日:木曜日 ※祝日の場合は営業
+        </td>
+      </tr>
+    </table>
+
+    <div class="content">
+      <h2 class="headding">店舗風景</h2>
+      <div class="content__img">
+        <img src="../assets/店舗外観.jpg" alt="店舗外観の写真" />
+
+        <img src="../assets/店内全体.jpg" alt="店内全体の写真" />
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
-.content {
-  background-color: black;
-  color: white;
-  width: 100%;
-  font-size: 1rem;
+.headding {
+  text-align: center;
 }
-
-table {
-  border: solid 1px white;
-  border-collapse: collapse;
-  text-align: left;
+.table {
   width: 100%;
-  height: 100%;
-  tr {
-    border: solid 1px white;
-    height: 5%;
+  margin: {
+    bottom: 5rem;
+  }
+  th {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    background-color: #dedede;
+    font-weight: bold;
   }
   td {
-    border: solid 1px white;
-    text-align: left;
+    padding: 20px;
+    border: 1px solid #ccc;
   }
 }
 
-.head__ttl {
-  text-align: center;
-  font-size: 1.5rem;
+.content {
+  width: 90%;
+  margin: 0 auto;
 }
 
-.shop-map {
-  height: 30%;
+.content__img {
+  display: flex;
+  width: 50%;
 }
 
-.google-map {
-  display: block;
+@media screen and (max-width: 900px) {
+  .table,
+  .table tr,
+  .table td,
+  .table th {
+    display: block;
+    th {
+      width: auto;
+    }
+  }
 }
 </style>

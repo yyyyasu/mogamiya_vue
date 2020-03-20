@@ -15,7 +15,7 @@ export default {
 <style lang="scss" scoped>
 .footer {
   display: flex;
-  height: 2em;
+  line-height: 2rem;
   background-color: #dedede;
   text-align: center;
   justify-content: center;

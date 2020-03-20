@@ -2,7 +2,9 @@
   <div id="app">
     <MainHeader />
     <router-view></router-view>
-    <MainFooter />
+    <div class="mainfooter">
+      <MainFooter />
+    </div>
     <transition name="fade">
       <div id="pagetop" v-show="scY > 10" @click="toTop">
         <a>トップへ</a>
@@ -30,10 +32,10 @@ export default {
 
   created() {
     //scイベント登録
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener("scroll", this.handleScroll);
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
     //ページトップへスクロール
@@ -72,14 +74,27 @@ img {
   margin: 0 auto;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 #app {
+  position: relative;
   width: 100%;
+  min-height: 100%;
   margin: 0 auto;
   font-family: "游明朝", "HGP明朝E", serif; /*"Avenir", Helvetica, Arial, sans-serif;*/
   -webkit-font-smoothing: antialiased; /* フォントのアンチエイリアス */
   -moz-osx-font-smoothing: grayscale;
   -ms-text-size-adjust: 100%; /* IE on Windows Phone用 */
   -webkit-text-size-adjust: 100%; /* iOS用 */
+}
+
+.mainfooter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 #pagetop {

@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <p class="logo">
-      <img src="../assets/店舗ロゴ背景透明化.png" alt="最上屋ロゴマーク"/>
+      <img src="../assets/店舗ロゴ背景透明化.png" alt="最上屋ロゴマーク" />
     </p>
     <div class="main">
       <div class="content">
@@ -44,6 +44,7 @@
 
 .logo {
   width: 50%;
+  height: auto;
   margin: 5rem auto;
   animation-name: slidein;
   animation-duration: 3s;
@@ -58,7 +59,6 @@
 .content__ttl {
   text-align: center;
   font-size: 1.5rem;
-  line-height: 2rem;
   margin-bottom: 1.5rem;
 }
 
@@ -66,7 +66,6 @@
   width: 80%;
   margin: 0 auto;
   font-size: 1rem;
-  line-height: auto;
 }
 
 @keyframes slidein {

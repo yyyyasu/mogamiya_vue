@@ -1,35 +1,37 @@
 <template>
   <div class="wrap">
-    <h2 class="headding">店舗情報</h2>
-    <table class="table">
-      <tr>
-        <th>店名</th>
-        <td>最上屋</td>
-      </tr>
-      <tr>
-        <th>所在地</th>
-        <td>〒562-0035 大阪府箕面市船場東3-10-28</td>
-      </tr>
-      <tr>
-        <th>電話</th>
-        <td>072-729-1551</td>
-      </tr>
-      <tr>
-        <th>FAX</th>
-        <td>072-729-1561</td>
-      </tr>
-      <tr>
-        <th>Email</th>
-        <td>mogamiya@110298.com</td>
-      </tr>
-      <tr>
-        <th>営業時間</th>
-        <td>
-          午前10時00分～午後7時00分 <br />
-          定休日:木曜日 ※祝日の場合は営業
-        </td>
-      </tr>
-    </table>
+    <div class="content">
+      <h2 class="headding">店舗情報</h2>
+      <table class="table">
+        <tr>
+          <th>店名</th>
+          <td>最上屋</td>
+        </tr>
+        <tr>
+          <th>所在地</th>
+          <td>〒562-0035 大阪府箕面市船場東3-10-28</td>
+        </tr>
+        <tr>
+          <th>電話</th>
+          <td>072-729-1551</td>
+        </tr>
+        <tr>
+          <th>FAX</th>
+          <td>072-729-1561</td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>mogamiya@110298.com</td>
+        </tr>
+        <tr>
+          <th>営業時間</th>
+          <td>
+            午前10時00分～午後7時00分 <br />
+            定休日:木曜日 ※祝日の場合は営業
+          </td>
+        </tr>
+      </table>
+    </div>
 
     <div class="content">
       <h2 class="headding">店舗風景</h2>

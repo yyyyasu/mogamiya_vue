@@ -1,9 +1,6 @@
 # mogamiya_vue
 
-## こちらで確認できます。
-```
-
-```
+### https://yyyyasu.github.io/mogamiya_vue/
 
 ## Project setup
 ```

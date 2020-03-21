@@ -67,12 +67,21 @@
 
 .content {
   width: 90%;
-  margin: 0 auto;
+  margin: {
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: auto;
+  }
 }
 
 .content__img {
   display: flex;
   width: 50%;
+  height: auto;
+  padding: {
+    bottom: 8rem;
+  }
 }
 
 @media screen and (max-width: 900px) {

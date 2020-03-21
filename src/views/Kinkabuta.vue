@@ -59,7 +59,7 @@
           食味もさらにアップ！脂が甘くなります。
         </p>
       </div>
-      <div>
+      <div class="kinkabuta-certificate">
         <img
           src="../assets/金華豚証明書.jpg"
           alt="最上屋は「平田牧場純粋金華豚」の正規取扱店です。"
@@ -115,6 +115,12 @@
     right: 0;
     bottom: 5rem;
     left: 0;
+  }
+}
+
+.kinkabuta-certificate {
+  padding: {
+    bottom: 8rem;
   }
 }
 

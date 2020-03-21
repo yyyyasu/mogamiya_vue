@@ -1,5 +1,10 @@
 # mogamiya_vue
 
+## こちらで確認できます。
+```
+
+```
+
 ## Project setup
 ```
 npm install

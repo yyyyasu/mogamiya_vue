@@ -35,11 +35,10 @@
 
     <div class="content">
       <h2 class="headding">店舗風景</h2>
-      <div class="content__img">
+      <p class="content__img">
         <img src="../assets/店舗外観.jpg" alt="店舗外観の写真" />
-
         <img src="../assets/店内全体.jpg" alt="店内全体の写真" />
-      </div>
+      </p>
     </div>
   </div>
 </template>
@@ -67,6 +66,7 @@
 
 .content {
   width: 90%;
+  height: 100%;
   margin: {
     top: 0;
     right: auto;

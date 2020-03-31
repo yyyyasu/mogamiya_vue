@@ -71,7 +71,7 @@ export default {
 #gnav__toggle {
   position: absolute;
   top: 8px;
-  right: 8px;
+  right: 16px;
   width: 32px;
   height: 32px;
   font-size: 8px;
@@ -129,10 +129,6 @@ export default {
   right: 0;
   font-size: 1.2em;
   background-color: #f6f6f6;
-
-  // li {
-  //   padding: 1em;
-  // }
 }
 
 /*OPEN時の動き*/

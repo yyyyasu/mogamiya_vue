@@ -78,7 +78,7 @@
 .content__img {
   display: flex;
   width: 50%;
-  height: auto;
+  height: 100%;
   padding: {
     bottom: 8rem;
   }
@@ -93,6 +93,13 @@
     th {
       width: auto;
     }
+  }
+  .content__img {
+    display: flex;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    flex-direction: column;
   }
 }
 </style>

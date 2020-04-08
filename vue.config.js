@@ -2,7 +2,7 @@ module.exports = {
   "transpileDependencies": [
     "vuetify"
   ],
-  publicPath: '/mogamiya_vue',
+  publicPath: './',
   outputDir: 'docs',
   filenameHashing: false,
   productionSourceMap: false,

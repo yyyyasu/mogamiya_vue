@@ -1,0 +1,15 @@
+version: "3"
+services:
+  webapp:
+    container_name: webapp
+    build:
+      context: .
+      dockerfile: dockerfile # 構築時に指定するdockerfile
+    volumes: # マウントする設定ファイルのパスを指定
+      - .:/app #　
+      - /app/node_modules
+    ports:
+      - "3000:3000" # DockerImageを立ち上げる際のポートを公開
+    environment: # 環境変数の追加
+      - PORT=3000
+      - NODE_ENV=development

@@ -4,7 +4,7 @@
       <h2 class="heading">総称山形牛</h2>
       <div class="content">
         <img
-          src="../assets/総称山形牛1.jpg"
+          src="../assets/soushou_yamagatagyu1.jpg"
           alt="山形牛ロースの写真"
           class="content__img--big"
         />
